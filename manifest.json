@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "kadaiowatter",
+    "version": "1.0.0",
+    "description": "課題を提出すると課題終わったの画像を表示します",
+    "content_scripts": [
+        {
+            "matches": ["https://scombz.shibaura-it.ac.jp/lms/course/report/submission"],
+            "css": ["style.css"],
+            "js": ["main.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["img/*.png", "img/*.jpg", "img/*.svg"],
+        "matches": ["<all_urls>"]
+    }]
+}

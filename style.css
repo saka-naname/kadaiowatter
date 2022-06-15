@@ -1,0 +1,8 @@
+.kadaiowatta-container{
+    display: flex;
+    justify-content: center;
+}
+
+.kadaiowatta{
+    width: 720px;
+}
