@@ -40,4 +40,24 @@ if(contentsComplete){
         document.querySelector(".contents-title").appendChild(kadaiOwattaContainer);
         document.querySelector(".block").remove();
     }
+
+    //  ツイートボタンを追加
+    const courseTitle = document.querySelector(".course-title-txt").textContent
+        .replace(/&/g, "&amp;")
+        .replace(/>/g, "&gt;")
+        .replace(/</g, "&lt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#x27;")
+        .replace(/`/g, "&#x60;")
+    const courseTitleItems = /(.+)\s([0-9]{2}[A-Z]{2}[0-9]{6})\s(.+)/.exec(courseTitle);
+    if(courseTitleItems !== null){
+        const elementTweetButton = document.createElement("a");
+        elementTweetButton.href = "javascript:void(0);";
+        elementTweetButton.classList = "twitter-share-button under-btn btn-txt btn-color courseOnReportComplete";
+        elementTweetButton.textContent = "ツイートする";
+        elementTweetButton.addEventListener("click", function(){
+            let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${courseTitleItems[3]}の課題を提出しました！%20pic.twitter.com/Oe2i83sZWf&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
+        });
+        document.getElementsByClassName("underButtonArea")[0].appendChild(elementTweetButton);
+    }
 }
