@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "kadaiowatter",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "課題を提出すると課題終わったの画像を表示します",
     "content_scripts": [
         {
@@ -15,14 +15,14 @@
         "default_icon": {
             "16": "/icons/16.png",
             "32": "/icons/32.png",
-            "64": "/icons/64.png",
+            "48": "/icons/48.png",
             "128": "/icons/128.png"
         }
     },
     "icons": {
         "16": "/icons/16.png",
         "32": "/icons/32.png",
-        "64": "/icons/64.png",
+        "48": "/icons/48.png",
         "128": "/icons/128.png"
     },
     "permissions": ["storage"],
