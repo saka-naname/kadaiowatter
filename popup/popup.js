@@ -1,5 +1,5 @@
 const defaultOptions = {
-    backgroundOwatta: true
+    backgroundOwatta: false
 }
 
 function saveOptions(){
