@@ -1,7 +1,12 @@
-const mode = "backgroundOwatta";
+const defaultOptions = {
+    backgroundOwatta: false
+}
+chrome.storage.local.get(defaultOptions, function(items){
+    backgroundOwatta = items.backgroundOwatta;
+});
 const contentsComplete = document.querySelector(".contents-detail.contents-complete");
 if(contentsComplete){
-    if(mode === "backgroundOwatta"){
+    if(backgroundOwatta){
         document.head.insertAdjacentHTML("beforeEnd",`
         <style>
         #pageMain{
