@@ -48,7 +48,7 @@ if(contentsComplete){
         .replace(/</g, "&lt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#x27;")
-        .replace(/`/g, "&#x60;")
+        .replace(/`/g, "&#x60;");
     const courseTitleItems = /(.+)\s([0-9]{2}[A-Z]{2}[0-9]{6})\s(.+)/.exec(courseTitle);
     if(courseTitleItems !== null){
         const elementTweetButton = document.createElement("a");
@@ -56,7 +56,7 @@ if(contentsComplete){
         elementTweetButton.classList = "twitter-share-button under-btn btn-txt btn-color courseOnReportComplete";
         elementTweetButton.textContent = "ツイートする";
         elementTweetButton.addEventListener("click", function(){
-            let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${courseTitleItems[3]}の課題を提出しました！%20pic.twitter.com/Oe2i83sZWf&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
+            let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${courseTitleItems[3]}の課題を提出しました！%20pic.twitter.com/Oe2i83sZWf%20hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
         });
         document.getElementsByClassName("underButtonArea")[0].appendChild(elementTweetButton);
     }
