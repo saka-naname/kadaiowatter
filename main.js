@@ -10,8 +10,9 @@ if(contentsComplete){
         document.head.insertAdjacentHTML("beforeEnd",`
         <style>
         #pageMain{
-            background-image: url(chrome-extension://${chrome.runtime.id}/img/kadaiowatta.png);
+            background-image: url(chrome-extension://${chrome.runtime.id}/img/kadaiowatta.png) !important;
             background-size: cover;
+            background-blend-mode: unset !important;
         }
         .course-header {
             background-color: #FFF7;
