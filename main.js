@@ -52,6 +52,14 @@ chrome.storage.local.get(defaultOptions, function(items){
             .replace(/`/g, "&#x60;");
         const courseTitleItems = /(.+)\s([0-9]{2}[A-Z]{2}[0-9]{6})\s(.+)/.exec(courseTitle);
         if(courseTitleItems !== null){
+            document.head.insertAdjacentHTML("beforeend", `
+            <style>
+            .twitter-share-button{
+                background-color: #1d9bf0;
+                border: 1px solid #3297db;
+            }
+            </style>
+            `);
             const elementTweetButton = document.createElement("a");
             elementTweetButton.href = "javascript:void(0);";
             elementTweetButton.classList = "twitter-share-button under-btn btn-txt btn-color courseOnReportComplete";
