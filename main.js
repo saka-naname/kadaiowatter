@@ -56,8 +56,26 @@ chrome.storage.local.get(defaultOptions, function(items){
             document.head.insertAdjacentHTML("beforeend", `
             <style>
             .twitter-share-button{
-                background-color: #1d9bf0;
-                border: 1px solid #3297db;
+                background-color: #fff;
+                color: #0f1419;
+                border-radius: 500px;
+                border: 2px solid #e8eff3;
+                font-size: 16px;
+                font-family: Arial,"ヒラギノ角ゴ Pro W3";
+                font-weight: bold;
+                width: 60% !important;
+                padding: 2px 0 0 6.5%;
+            }
+            .twitter-share-button::before {
+                content: "";
+                background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxvZ28iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQ4IDIwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQ4IDIwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMxRDlCRjA7fQo8L3N0eWxlPgo8ZyBpZD0iTG9nb18xXyI+Cgk8cGF0aCBpZD0id2hpdGVfYmFja2dyb3VuZCIgY2xhc3M9InN0MCIgZD0iTTIyMS45NSw1MS4yOWMwLjE1LDIuMTcsMC4xNSw0LjM0LDAuMTUsNi41M2MwLDY2LjczLTUwLjgsMTQzLjY5LTE0My42OSwxNDMuNjl2LTAuMDQgICBDNTAuOTcsMjAxLjUxLDI0LjEsMTkzLjY1LDEsMTc4LjgzYzMuOTksMC40OCw4LDAuNzIsMTIuMDIsMC43M2MyMi43NCwwLjAyLDQ0LjgzLTcuNjEsNjIuNzItMjEuNjYgICBjLTIxLjYxLTAuNDEtNDAuNTYtMTQuNS00Ny4xOC0zNS4wN2M3LjU3LDEuNDYsMTUuMzcsMS4xNiwyMi44LTAuODdDMjcuOCwxMTcuMiwxMC44NSw5Ni41LDEwLjg1LDcyLjQ2YzAtMC4yMiwwLTAuNDMsMC0wLjY0ICAgYzcuMDIsMy45MSwxNC44OCw2LjA4LDIyLjkyLDYuMzJDMTEuNTgsNjMuMzEsNC43NCwzMy43OSwxOC4xNCwxMC43MWMyNS42NCwzMS41NSw2My40Nyw1MC43MywxMDQuMDgsNTIuNzYgICBjLTQuMDctMTcuNTQsMS40OS0zNS45MiwxNC42MS00OC4yNWMyMC4zNC0xOS4xMiw1Mi4zMy0xOC4xNCw3MS40NSwyLjE5YzExLjMxLTIuMjMsMjIuMTUtNi4zOCwzMi4wNy0xMi4yNiAgIGMtMy43NywxMS42OS0xMS42NiwyMS42Mi0yMi4yLDI3LjkzYzEwLjAxLTEuMTgsMTkuNzktMy44NiwyOS03Ljk1QzI0MC4zNywzNS4yOSwyMzEuODMsNDQuMTQsMjIxLjk1LDUxLjI5eiIvPgo8L2c+Cjwvc3ZnPgo=);
+                background-size: contain;
+                width: 26px;
+                height: 30px;
+                background-repeat: no-repeat;
+                float: left;
+                position: absolute;
+                transform: translate(-70px,3px);
             }
             </style>
             `);
