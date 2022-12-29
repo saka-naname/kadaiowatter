@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); </style>
+    <style> @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"); </style>
     <style> article, footer { font-family: 'Noto Sans JP', sans-serif; } </style>
 </head>
 <body>
@@ -29,8 +31,8 @@
             </div>
         </div>
     </header>
-    <article class="px-4 pt-5 my-5 text-center">
-        <div class="container">
+    <article class="px-4 pt-5 my-5">
+        <div class="container mb-5 text-center">
             <h1 class="display-4 fw-bold">課題の提出に、遊び心を。</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
@@ -42,13 +44,13 @@
                 <a href="https://github.com/saka-naname/kadaiowatter/releases" class="btn btn-outline-dark btn-lg mx-2">Releases</a>
             </div>
             <div class="container-md px-4">
-                <img src="img/kadaiowatta_800_450.webp" alt="image of kadaiowatta" class="img-fluid rounded-3 shadow mb-4" width="800" height="450" title="こんな画像が課題提出画面に表示されます">
+                <img src="img/kadaiowatta_800_450.webp" alt="image of kadaiowatta" class="img-fluid rounded-3 shadow mb-4" width="800" height="450" title="「課題おわった」の画像 作:増">
             </div>
         </div>
-        <div class="container">
-            <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
+        <div class="container px-4 py-5 border-top border-bottom">
+            <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5">
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="img/sample_basic.webp" alt="課題提出画面に「課題おわった」という文字が書かれた画像が表示されます" class="d-block mx-lg-auto img-fluid rounded shadow" width="800" height="450" loading="lazy">
+                    <img src="img/sample_basic.webp" alt="課題提出画面に「課題おわった」という文字が書かれた画像が表示されます" class="d-block mx-lg-auto img-fluid rounded shadow" width="800" height="450" title="画像表示機能のイメージ" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h1 class="fw-bold lh-1 mb-3">いつもの画面にひと味プラス</h1>
@@ -56,13 +58,60 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 text-start">
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <i class="bi-sliders" style="width: 1em; height: 1em"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 fw-bold">ご褒美はあなた好みに</h3>
+                        <p class="lead">課題を提出したときに表示される画像や、画像の大きさはオプションでカスタマイズ可能。背景いっぱいに「課題おわった」の画像を表示するもよし、ネコの写真で癒されるもよし。</p>
+                        <p class="lead"><mark>※画像を変更する機能は今後実装される予定です。</mark></p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <i class="bi-twitter" style="width: 1em; height: 1em"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 fw-bold">ツイ廃のあなたにも</h3>
+                        <p class="lead">提出完了画面にシェアボタンを追加。ボタンをクリックするだけで、課題が終わったことを簡単にツイートできます。</p>
+                        <p class="lead">生成されるツイートには、ハッシュタグと科目名に加え、「課題おわった」の画像を表示するURLが含まれます。</p>
+                    </div>
+                </div>                
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <i class="bi bi-check-square-fill"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 fw-bold">遊び心と利便性の両立</h3>
+                        <p class="lead">kadaiowatterは<a href="https://yudai1204.github.io/ScombZ-Utilities/">ScombZ-Utilities</a>と併用可能。Utilitiesによって使いやすくなったUIの邪魔はしません。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </article>
+    <section>
+        <div class="text-bg-dark">
+            <div class="container px-4 py-5">
+                <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <h1 class="fw-bold lh-1 mb-3">インストール方法</h1>
+                        <p class="lead"><a href="https://github.com/saka-naname/kadaiowatter/releases" class="link-light">Releases</a>からzip形式の拡張機能本体をダウンロードし、デベロッパーモードで導入してください。</p>
+                        <p class="lead">今後、Chrome Web Storeへの公開も検討しています。</p>
+                        <a href="https://github.com/saka-naname/kadaiowatter#導入方法" class="btn btn-light"><i class="bi bi-chevron-right"></i> 詳しく見る </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer mt-auto px-4 py-3 bg-light text-muted">
         <div class="container d-flex flex-wrap justify-content-center">
-            <div class="col-6">
+            <div class="col-12 col-sm-6 text-center text-sm-start">
                 <p>制作：さか<br>協力：うだい、増<br>※敬称略</p>
             </div>
-            <div class="col-6 text-end">
+            <div class="col-12 col-sm-6 text-center text-sm-end">
                 <a href="https://github.com/saka-naname/kadaiowatter" class="link-dark">GitHub</a><br>
                 <a href="https://twitter.com/naname_eis" class="link-dark">作者Twitter</a><br>
                 <a href="https://sakanana.me" class="link-dark">sakanana.me</a>
