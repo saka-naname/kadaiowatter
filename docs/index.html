@@ -14,8 +14,8 @@
     <title>kadaiowatter</title>    
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap'); </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); </style>
     <style> article, footer { font-family: 'Noto Sans JP', sans-serif; } </style>
 </head>
 <body>
@@ -24,7 +24,8 @@
             <span class="navbar-brand mb-0 h1">kadaiowatter</span>
             <div class="links">
                 <a href="https://github.com/saka-naname/kadaiowatter" class="link-dark mx-3">GitHub</a>
-                <a href="https://github.com/saka-naname/kadaiowatter#導入方法" class="btn btn-outline-dark">インストール</a>
+                <a href="https://github.com/saka-naname/kadaiowatter#導入方法" class="btn btn-outline-dark btn d-none d-md-inline-block">インストール</a>
+                <a href="https://github.com/saka-naname/kadaiowatter/releases" class="link-dark d-inline d-md-none">Releases</a>
             </div>
         </div>
     </header>
@@ -36,17 +37,18 @@
                     頑張って取り組んだ課題に、何かご褒美があったら。<br>課題を提出できた喜びを、誰かと分かち合えたら。<br>そんな願いを、kadaiowatterは叶えます。
                 </p>
             </div>
-            <div class="container mb-4">
-                <a href="https://github.com/saka-naname/kadaiowatter#導入方法" class="btn btn-dark">インストールする</a>
+            <div class="container mb-4 d-none d-md-block">
+                <a href="https://github.com/saka-naname/kadaiowatter#導入方法" class="btn btn-dark btn-lg mx-2">インストールする</a>
+                <a href="https://github.com/saka-naname/kadaiowatter/releases" class="btn btn-outline-dark btn-lg mx-2">Releases</a>
             </div>
             <div class="container-md px-4">
-                <img src="img/kadaiowatta.png" alt="image of kadaiowatta" class="img-fluid rounded-3 shadow mb-4" width="800" loading="lazy" title="こんな画像が課題提出画面に表示されます">
+                <img src="img/kadaiowatta_800_450.webp" alt="image of kadaiowatta" class="img-fluid rounded-3 shadow mb-4" width="800" height="450" title="こんな画像が課題提出画面に表示されます">
             </div>
         </div>
         <div class="container">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="img/sample_basic.png" alt="課題提出画面に「課題おわった」という文字が書かれた画像が表示されます" class="d-block mx-lg-auto img-fluid rounded shadow" loading="lazy">
+                    <img src="img/sample_basic.webp" alt="課題提出画面に「課題おわった」という文字が書かれた画像が表示されます" class="d-block mx-lg-auto img-fluid rounded shadow" width="800" height="450" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h1 class="fw-bold lh-1 mb-3">いつもの画面にひと味プラス</h1>
@@ -58,18 +60,18 @@
     <footer class="footer mt-auto px-4 py-3 bg-light text-muted">
         <div class="container d-flex flex-wrap justify-content-center">
             <div class="col-6">
-                <p>開発者：さか<br>協力：増、うだい<br>※敬称略</p>
+                <p>制作：さか<br>協力：うだい、増<br>※敬称略</p>
             </div>
             <div class="col-6 text-end">
-                <a href="https://github.com/saka-naname/kadaiowatter">GitHub</a><br>
-                <a href="https://twitter.com/naname_eis">作者Twitter</a><br>
-                <a href="https://sakanana.me">sakanana.me</a>
+                <a href="https://github.com/saka-naname/kadaiowatter" class="link-dark">GitHub</a><br>
+                <a href="https://twitter.com/naname_eis" class="link-dark">作者Twitter</a><br>
+                <a href="https://sakanana.me" class="link-dark">sakanana.me</a>
             </div>
         </div>
         <div class="container">
-            <p class="my-4 text-center text-muted">この拡張機能を利用したことにより発生した損害について、作者および共同開発者は何の責任も負いません。リスクを理解の上で、自己責任で利用してください。</p>
+            <p class="my-4 text-center text-muted">この拡張機能を利用したことにより発生した不利益について、作者および共同開発者は何の責任も負いません。リスクを理解した上で、自己責任で利用してください。</p>
         </div>
-        <p class="my-4 text-center text-muted">© 2022 saka-naname</p>
+        <p class="my-4 text-center text-muted">© 2022 saka</p>
     </footer>
     <script src="./js/bootstrap.min.js"></script>
 </body>
