@@ -3,9 +3,10 @@ const defaultOptions = {
 }
 
 if (location.href ===        "https://scombz.shibaura-it.ac.jp/lms/course/report/submission" || 
-    location.href.startsWith("https://scombz.shibaura-it.ac.jp/lms/course/surveys/take?complete" || 
+    location.href.startsWith("https://scombz.shibaura-it.ac.jp/lms/course/surveys/take?complete") || 
     location.href.startsWith("https://scombz.shibaura-it.ac.jp/lms/course/examination/take?complete")
-    )) {
+    ) {
+        console.log("KADAIOWATTER");
     chrome.storage.local.get(defaultOptions, function (items) {
         const backgroundOwatta = items.backgroundOwatta;
 
@@ -71,6 +72,9 @@ if (location.href ===        "https://scombz.shibaura-it.ac.jp/lms/course/report
                 font-weight: bold;
                 width: 60% !important;
                 padding: 2px 0 0 6.5%;
+                margin: 10px auto;
+                display: block;
+                min-height: 32px;
             }
             .twitter-share-button::before {
                 content: "";
@@ -109,10 +113,11 @@ if (location.href ===        "https://scombz.shibaura-it.ac.jp/lms/course/report
                 }
                 // ツイートボタンのクリック時の処理
                 elementTweetButton.addEventListener("click", function () {
-                    let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${decodeURIComponent(courseTitleItems[3] + tweetString())}%20pic.twitter.com%2FOe2i83sZWf&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
+                    let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${decodeURIComponent(courseTitleItems[3] + tweetString())}&url=https://kadaiowatter.sakanana.me&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
                 });
                 // ツイートボタンの挿入
-                document.getElementsByClassName("underButtonArea")[0].appendChild(elementTweetButton);
+                const btnArea = document.querySelector(".underButtonArea") || document.querySelector(".contents-detail.contents-complete").parentNode;
+                btnArea.appendChild(elementTweetButton);
             };
         };
     });
