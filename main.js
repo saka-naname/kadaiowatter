@@ -1,17 +1,22 @@
 const defaultOptions = {
-    backgroundOwatta: false
+    backgroundOwatta: true
 }
 
-chrome.storage.local.get(defaultOptions, function(items){
-    const backgroundOwatta = items.backgroundOwatta;
+if (location.href ===        "https://scombz.shibaura-it.ac.jp/lms/course/report/submission" || 
+    location.href.startsWith("https://scombz.shibaura-it.ac.jp/lms/course/surveys/take?complete" || 
+    location.href.startsWith("https://scombz.shibaura-it.ac.jp/lms/course/examination/take?complete")
+    )) {
+    chrome.storage.local.get(defaultOptions, function (items) {
+        const backgroundOwatta = items.backgroundOwatta;
 
-    const contentsComplete = document.querySelector(".contents-detail.contents-complete");
-    if(contentsComplete){
-        if(backgroundOwatta){
-            document.head.insertAdjacentHTML("beforeEnd",`
+        const contentsComplete = document.querySelector(".contents-detail.contents-complete");
+        if (contentsComplete) {
+            //クソデカオワッター
+            if (backgroundOwatta) {
+                document.head.insertAdjacentHTML("beforeEnd", `
             <style>
             #pageMain{
-                background-image: url(chrome-extension://${chrome.runtime.id}/img/kadaiowatta.png) !important;
+                background-image: url(${chrome.runtime.getURL("img/kadaiowatta.png")}) !important;
                 background-size: cover;
                 background-blend-mode: unset !important;
             }
@@ -32,28 +37,29 @@ chrome.storage.local.get(defaultOptions, function(items){
             }
             </style>
             `);
-        }else{
-            const elementKadaiOwatta = document.createElement("img");
-            elementKadaiOwatta.src = `chrome-extension://${chrome.runtime.id}/img/kadaiowatta.png`;
-            elementKadaiOwatta.classList = "kadaiowatta";
-            const kadaiOwattaContainer = document.createElement("div");
-            kadaiOwattaContainer.classList = "kadaiowatta-container";
-            kadaiOwattaContainer.appendChild(elementKadaiOwatta);
-            document.querySelector(".contents-title").appendChild(kadaiOwattaContainer);
-            document.querySelector(".block").remove();
-        }
+            } else {
+                //通常オワッター
+                const elementKadaiOwatta = document.createElement("img");
+                elementKadaiOwatta.src = `chrome-extension://${chrome.runtime.id}/img/kadaiowatta.png`;
+                elementKadaiOwatta.classList = "kadaiowatta";
+                const kadaiOwattaContainer = document.createElement("div");
+                kadaiOwattaContainer.classList = "kadaiowatta-container";
+                kadaiOwattaContainer.appendChild(elementKadaiOwatta);
+                document.querySelector(".contents-title").appendChild(kadaiOwattaContainer);
+                document.querySelector(".block").remove();
+            }
 
-        //  ツイートボタンを追加
-        const courseTitle = document.querySelector(".course-title-txt").textContent
-            .replace(/&/g, "&amp;")
-            .replace(/>/g, "&gt;")
-            .replace(/</g, "&lt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#x27;")
-            .replace(/`/g, "&#x60;");
-        const courseTitleItems = /(.+)\s([0-9]{2}[A-Z]{2}[0-9]{6})\s(.+)/.exec(courseTitle);
-        if(courseTitleItems !== null){
-            document.head.insertAdjacentHTML("beforeend", `
+            //  ツイートボタンを追加
+            const courseTitle = document.querySelector(".course-title-txt").textContent
+                .replace(/&/g, "&amp;")
+                .replace(/>/g, "&gt;")
+                .replace(/</g, "&lt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#x27;")
+                .replace(/`/g, "&#x60;");
+            const courseTitleItems = /(.+)\s([0-9]{2}[A-Z]{2}[0-9]{6})\s(.+)/.exec(courseTitle);
+            if (courseTitleItems !== null) {
+                document.head.insertAdjacentHTML("beforeend", `
             <style>
             .twitter-share-button{
                 background-color: #fff;
@@ -79,14 +85,35 @@ chrome.storage.local.get(defaultOptions, function(items){
             }
             </style>
             `);
-            const elementTweetButton = document.createElement("a");
-            elementTweetButton.href = "javascript:void(0);";
-            elementTweetButton.classList = "twitter-share-button under-btn btn-txt btn-color courseOnReportComplete";
-            elementTweetButton.textContent = "ツイートする";
-            elementTweetButton.addEventListener("click", function(){
-                let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${decodeURIComponent(courseTitleItems[3] + "の課題を提出しました！")}%20pic.twitter.com%2FOe2i83sZWf&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
-            });
-            document.getElementsByClassName("underButtonArea")[0].appendChild(elementTweetButton);
-        }
-    }
-});
+                // ツイートボタンの作成
+                const elementTweetButton = document.createElement("a");
+                elementTweetButton.href = "javascript:void(0);";
+                elementTweetButton.classList = "twitter-share-button under-btn btn-txt btn-color courseOnReportComplete";
+                elementTweetButton.textContent = "ツイートする";
+                // ツイート文の作成
+                const tweetString = function(){
+                    switch (location.href.replace("https://scombz.shibaura-it.ac.jp/lms/course/","").split("/")[0]){
+                        case "report":
+                            return "の課題を提出しました！";
+                            break;
+                        case "surveys":
+                            return "のアンケートに回答しました！";
+                            break;
+                        case "examination":
+                            return "のテストに解答しました！";
+                            break;
+                        default:
+                            return "の課題を提出しました！";
+                            break;
+                    };
+                }
+                // ツイートボタンのクリック時の処理
+                elementTweetButton.addEventListener("click", function () {
+                    let tweetWindow = window.open(`https://twitter.com/intent/tweet?text=${decodeURIComponent(courseTitleItems[3] + tweetString())}%20pic.twitter.com%2FOe2i83sZWf&hashtags=kadaiowatter`, "kadaiowattaTweet", "width=640, height=480, innerWidth=640, innerHeight=480");
+                });
+                // ツイートボタンの挿入
+                document.getElementsByClassName("underButtonArea")[0].appendChild(elementTweetButton);
+            };
+        };
+    });
+}
