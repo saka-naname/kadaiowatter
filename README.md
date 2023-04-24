@@ -1,5 +1,13 @@
+![Version for Chrome](https://img.shields.io/chrome-web-store/v/ogpmacookbmdacllljbakgabghlgajla?color=yellow&style=flat-square)
+![Chrome Users](https://img.shields.io/chrome-web-store/users/ogpmacookbmdacllljbakgabghlgajla?color=yellow&style=flat-square)
+
 # kadaiowatter
 ScombZで課題を提出したときに「課題おわった」の画像を表示するChrome拡張機能
+
+WebStore: https://chrome.google.com/webstore/detail/kadaiowatter/ogpmacookbmdacllljbakgabghlgajla
+[![Chrome 版のリンク](./chrome.png)](https://chrome.google.com/webstore/detail/kadaiowatter/ogpmacookbmdacllljbakgabghlgajla)
+
+
 
 ## 導入方法
 1. **kadaiowatter_vX.X.X.zip**を適当なフォルダにダウンロードして解凍する（vX.X.Xには任意のバージョン番号が入ります）
