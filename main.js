@@ -20,6 +20,7 @@ if (location.href ===        "https://scombz.shibaura-it.ac.jp/lms/course/report
                 background-image: url(${chrome.runtime.getURL("img/kadaiowatta.png")}) !important;
                 background-size: cover;
                 background-blend-mode: unset !important;
+                background-attachment: fixed;
             }
             .course-header {
                 background-color: #FFF7;
